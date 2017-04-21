@@ -3,9 +3,14 @@
 # Run some basic sanity tests using wine
 # Designed to be run under Travis
 #
+echo ${TRAVIS_PYTHON_VERSION}
+set
+echo "****"
+echo $(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION}_DL)
+
 PYTHON_DL_URL=$(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION}_DL)
 
-[ -z $PYTHON_DL_URL ] && ( echo "Expected PYTHON_DL_URL to be set." && exit 1 )
+[ -z $PYTHON_DL_URL ] && echo "Expected PYTHON_DL_URL to be set." && exit 1
 
 mkdir wineroot
 export WINEPREFIX="`pwd`/wineroot"
