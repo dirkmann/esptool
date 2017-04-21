@@ -68,6 +68,8 @@ script:
   # build stub (Python 3 only)
   - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then make -C flasher_stub V=1; fi
   # check the just-built stub matches the one in esptool.py
-  - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then cd flasher_stub && python ./compare_stubs.py; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then (cd flasher_stub && python ./compare_stubs.py); fi
   # test the Windows installation using wine
+  - ls
+  - pwd
   - PYTHON_DL_URL=$(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION}_DL) ./test/run_travis_wine_tests.sh
