@@ -34,9 +34,9 @@ env:
   ESP32_IDF_URL="https://github.com/espressif/esp-idf/archive/v1.0.zip"
   PATH="${PATH}:${ESP8266_BINDIR}:${ESP32_BINDIR}"
 
-  WINDOWS_PYTHON_2.7_DL="https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi"
-  WINDOWS_PYTHON_3.4_DL="https://www.python.org/ftp/python/3.4.4/python-3.4.4.msi"
-  WINDOWS_PYTHON_3.5_DL="https://www.python.org/ftp/python/3.5.3/python-3.5.3.exe"
+  WINDOWS_PYTHON_27_DL="https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi"
+  WINDOWS_PYTHON_34_DL="https://www.python.org/ftp/python/3.4.4/python-3.4.4.msi"
+  WINDOWS_PYTHON_35_DL="https://www.python.org/ftp/python/3.5.3/python-3.5.3.exe"
 
 cache:
   directories:
