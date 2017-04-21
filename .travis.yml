@@ -5,7 +5,7 @@ sudo: false
 addons:
   apt:
     packages:
-      - wine1.6
+      - wine1.6-i386
       - xvfb
 
 env:
