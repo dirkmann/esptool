@@ -8,7 +8,7 @@ set
 echo "****"
 printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION//./}_DL
 
-PYTHON_DL_URL=$(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION//./}_DL
+PYTHON_DL_URL=$(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION//./}_DL)
 
 [ -z $PYTHON_DL_URL ] && echo "Expected PYTHON_DL_URL to be set." && exit 1
 
