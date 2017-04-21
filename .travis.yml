@@ -1,5 +1,13 @@
 language: python
+dist: trusty
 sudo: false
+
+addons:
+  apt:
+    packages:
+      - wine1.6
+      - xvfb
+
 env:
   # Downloadable toolchains & SDKs for esp8266 & esp32
   #
