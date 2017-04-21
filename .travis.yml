@@ -26,6 +26,10 @@ env:
   ESP32_IDF_URL="https://github.com/espressif/esp-idf/archive/v1.0.zip"
   PATH="${PATH}:${ESP8266_BINDIR}:${ESP32_BINDIR}"
 
+  WINDOWS_PYTHON_2.7_DL="https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi"
+  WINDOWS_PYTHON_3.4_DL="https://www.python.org/ftp/python/3.4.4/python-3.4.4.msi"
+  WINDOWS_PYTHON_3.5_DL="https://www.python.org/ftp/python/3.5.3/python-3.5.3.exe"
+
 cache:
   directories:
     - ${TOOLCHAIN_DIR}
@@ -57,3 +61,5 @@ script:
   - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then make -C flasher_stub V=1; fi
   # check the just-built stub matches the one in esptool.py
   - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then cd flasher_stub && python ./compare_stubs.py; fi
+  # test the Windows installation using wine
+  - PYTHON_DL_URL=$(printenv WINDOWS_PYTHON_${TRAVIS_PYTHON_VERSION}_DL) test/run_travis_wine_tests.sh
